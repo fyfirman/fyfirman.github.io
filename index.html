@@ -22,8 +22,8 @@
         firebase.initializeApp(config);
     </script>
     <script>
-        function submit(){
-            var message =  document.getElementById("message-input").value;
+        function submit() {
+            var message = document.getElementById("message-input").value;
             saveToFirebase(message);
         }
 
@@ -31,14 +31,30 @@
             var messageObject = {
                 message: message
             };
-
-            firebase.database().ref('messages').push().set(messageObject)
+            
+            var size = 
+            firebase.database().ref('messages/').push(messageObject)
                 .then(function (snapshot) {
                     console.log('Save to firebase success');
                 }, function (error) {
                     console.log('Error : ' + error);
                 });
         }
+
+        function getMessage() {
+            firebase.database().ref('messages').limitToLast(1).on("child_added", function (data, prevChildKey) {
+                var data = data.val();
+                // console.log("Data yang mau diambil : " + data.message);
+            });
+            function (data, prevChildKey) {
+                var data = data.val();
+                console.log("Data yang mau diambil : " + data.message);
+            }
+        }
+
+        
+        getMessage();
+        // console.log(getLengthFirebase());
     </script>
 </head>
 
@@ -49,7 +65,21 @@
             <input type="text" class="form-control" name="" id="message-input" placeholder="Enter your message">
             <button name="" id="" class="btn btn-primary" type="submit" value="" onclick="submit()">Submit</button>
         </div>
+        <div id="test">
+
+        </div>
     </div>
+
+    <script>
+        var ref = firebase.database().ref('messages');
+        ref.on("value", function (snapshot) {
+            obj = snapshot.val();
+            // console.log(JSON.stringify(obj));
+            // $.each(obj, function(i, item){
+            // });
+
+        });
+    </script>
 </body>
 
 </html>
