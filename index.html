@@ -1,1 +1,55 @@
-"Hello World! Welcome to my website" 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <title>fyfirman</title>
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBVvqzuYTMoyiRcnUsEw7Po8ajTY3L5ras",
+            authDomain: "fy-githubio.firebaseapp.com",
+            databaseURL: "https://fy-githubio.firebaseio.com",
+            projectId: "fy-githubio",
+            storageBucket: "fy-githubio.appspot.com",
+            messagingSenderId: "844412268819"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script>
+        function submit(){
+            var message =  document.getElementById("message-input").value;
+            saveToFirebase(message);
+        }
+
+        function saveToFirebase(message) {
+            var messageObject = {
+                message: message
+            };
+
+            firebase.database().ref('messages').push().set(messageObject)
+                .then(function (snapshot) {
+                    console.log('Save to firebase success');
+                }, function (error) {
+                    console.log('Error : ' + error);
+                });
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        Message for fyfirman
+        <div class="form-group col-md-6">
+            <input type="text" class="form-control" name="" id="message-input" placeholder="Enter your message">
+            <button name="" id="" class="btn btn-primary" type="submit" value="" onclick="submit()">Submit</button>
+        </div>
+    </div>
+</body>
+
+</html>
