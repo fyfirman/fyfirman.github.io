@@ -10,15 +10,20 @@ body{
     font-family: 'Varela', sans-serif;
     color: #444444;
     font-weight: 600;
-    /* background-color: #6437BF */
+    margin-bottom: 30px;
+}
+
+.message-form{
+    text-align: center;
 }
 #message-input::placeholder{
-    /* font-weight: 100 !important; */
+    font-weight: 100 !important;
 }
+
 .btn-submit{
     color: white;
     background-color: rgb(42, 183, 202);
-    margin: 5px;
+    margin-top: 5px;
 }
 
 .btn-submit:hover{
