@@ -1,6 +1,6 @@
 # main text of home
-name: John Doe
-bio: A Man who travels the world eating noodles
+name: Firmansyah Yanuar
+bio: Software Engineer | Front End Developer | UI/UX Designer
 
 # twitter summary info
 description: A blog about technology and stuff related
@@ -34,26 +34,32 @@ disqus:
   categories: [blog, project] # only show disqus for posts that have these categories
 
 # if you don't have any of social below, comment the line
-facebook: myfacebook
-twitter: mytwitter
+facebook: fyfirman34
+twitter: fyfirman
 # google: mygoogle
-# instagram: myinstagram
+instagram: fyfirman
 # pinterest: mypinterest
 # linkedin: mylinkedin
 # youtube: myyoutube
 # spotify: myspotify
-github: mygithub
+github: fyfirman
 # gitlab: mygitlab
 # lastfm: mylastfm
 # stackoverflow: 7044681/mystackoverflow
 # quora: userquora
 # reddit: username
-medium: medium
+# medium: medium
 # vimeo: myvimeo
 # lanyrd: mylanyrd
-email: myemail@gmail.com
+email: fyfirman@gmail.com
 
 authors:
+    fyfirman:
+        name: Firmansyah Yanuar
+        bio: Software Engineer | Front End Developer | UI/UX Designer
+        external-image: false
+        picture: assets/images/profile.jpg
+        twitter: fyfirman
     johndoe:
         name: John Doe
         bio: A Man who travels the world eating noodles
@@ -70,7 +76,7 @@ authors:
 # do you want a larger site? change the option below
 # options: [normal, large] | default: normal
 # normal = 560px / large = 810px
-width: normal
+width: large
 
 # if you don't need pagination, comment the *paginate* configs below
 # paginate: 5
