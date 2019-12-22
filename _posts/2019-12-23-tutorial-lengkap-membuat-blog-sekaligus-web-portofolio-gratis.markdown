@@ -18,192 +18,136 @@ description: Tutorial Lengkap Membuat Blog Sekaligus Web Portofolio Gratis
 hidden: false
 ---
 
-## Basic formatting
-
-This note **demonstrates** some of what [Markdown][1] is *capable of doing*.
-
-And that's how to do it.
-
-{% highlight html %}
-This note **demonstrates** some of what [Markdown][some/link] is *capable of doing*.
-{% endhighlight %}
+Portofolio merupakan hal yang penting untuk melamar sebuah pekerjaan. Saya pribadi adalah seorang mahasiswa informatika di salah satu perguruan tinggi di Jawa Barat yang dalam kurikulumnya diwajibkan untuk mengikuti program magang. Sudah 23 perusahaan saya ajukan permohonan magang namun hasilnya nihil. Bisa dibilang, saya sudah berpengalaman untuk mengerjakan suatu _project._ Namun saya bertanya pada diri saya sendiri, “Bagaimana _recruiter_ tau fakta itu? Bagaimana mereka memvalidasi perkataan saya? Apa sekedar tulisan di CV atau  _linkedin_ cukup?”. Dengan pertanyaan seperti itu saya yakin dengan membuat website portofolio, hal ini bisa memudahkan _recruiter_ untuk memperlihatkan apa yang saya alami.
 
 ---
 
-## Headings
+# Mari membuat!
 
-There are six levels of headings. They correspond with the six levels of HTML headings. You've probably noticed them already in the page. Each level down uses one more hash character. But we are using just 4 of them.
+## Membuat halaman github.io (github-pages)
 
-# Headings can be small
+Github menyediakan halaman gratis untuk usernya. Kita bisa mengisi halaman tersebut dengan file HTML, CSS, atau lainnya. Halaman ini bersifat _static, _artinya kita tidak bisa menaruh database di dalamnya.
 
-## Headings can be small
+Saya sudah membuat halaman github.io sendiri. Halaman ini saya isi oleh sebuah form tentang impresi pertama untuk saya. kita bisa mengisi impresi terhadap saya pada website tersebut. Namun website tersebut akan dipindahkan kedalam sebuah blog/web portofolio.
 
-### Headings can be small
+Jika kita ingin mengikuti tutorial ini, kita ikuti tutorial membuat halaman github.io di internet. Saya rekomendasikan tutorial dari website petani kode _[disini](https://www.petanikode.com/github-pages/)_.
 
-#### Headings can be small
+## Membuat blog Jekyll
 
-{% highlight raw %}
-# Heading
-## Heading
-### Heading
-#### Heading
-{% endhighlight %}
+> _Jekyll is a static site generator. You give it text written in your favorite markup language and it uses layouts to create a static website. You can tweak how you want the site URLs to look like, what data gets displayed on the site, and more._
 
----
+Seperti yang tertulis di websitenya, Jekyll adalah sebuah tools yang digunakan untuk membangun website static. Ini sangat cocok sekali untuk github.io.
 
-## Lists
+Untuk sistem operasi yang saya gunakan adalah Windows, jadi untuk pengguna Linux atau MacOS bisa jadi ada beberapa langkah yang berbeda.
 
-### Ordered list
+### _Install Requirements_
 
-1. Item 1
-2. A second item
-3. Number 3
+#### *Install* [Ruby](https://rubyinstaller.org/downloads/)
 
-{% highlight raw %}
-1. Item 1
-2. A second item
-3. Number 3
-{% endhighlight %}
+![alt text][1]
 
-### Unordered list
+Pilih Ruby+Devkit dengan versi terbaru dan sesuaikan dengan sistem operasi yang digunakan dan jalankan *installer*.
 
-* An item
-* Another item
-* Yet another item
-* And there's more...
+Untuk memastikan Ruby sudah ter-*install* atau belum, kita bisa jalankan `ruby -v` pada CMD kita
 
-{% highlight raw %}
-* An item
-* Another item
-* Yet another item
-* And there's more...
-{% endhighlight %}
+![alt text][2]
 
----
+#### *Install* RubyGems
 
-## Paragraph modifiers
+Gem akan otomatis ter-*install* jika kita meng-*install* Ruby dengan Ruby Installer. Kita bisa cek dengan menjalankan `gem -v`
 
-### Quote
+![alt text][3]
 
-> Here is a quote. What this is should be self explanatory. Quotes are automatically indented when they are used.
+#### *Install* [Make](https://github.com/msysgit/msysgit/releases/download/Git-1.9.4-preview20140929/msysGit-netinstall-1.9.4-preview20140929.exe)
 
-{% highlight raw %}
-> Here is a quote. What this is should be self explanatory.
-{% endhighlight raw %}
+Jalankan installer, lalu tambahkan `C:\msysGit\bin` pada *path* di _Environment Variable_ Windows kita
 
----
+![alt text][4]
 
-## URLs
+Cek dengan menggunakan `make -v	`
 
-URLs can be made in a handful of ways:
+![alt text][5]
 
-* A named link to [Mark It Down][3].
-* Another named link to [Mark It Down](http://markitdown.net/)
-* Sometimes you just want a URL like <http://markitdown.net/>.
+#### *Install* [GCC](http://tdm-gcc.tdragon.net/download)
 
-{% highlight raw %}
-* A named link to [MarkItDown][3].
-* Another named link to [MarkItDown](http://markitdown.net/)
-* Sometimes you just want a URL like <http://markitdown.net/>.
-{% endhighlight %}
+Cek dengan menggunakan `gcc -v`
 
----
+![alt text][6]
 
-## Horizontal rule
+### Install Jekyll dan bundler gems
 
-A horizontal rule is a line that goes across the middle of the page.
-It's sometimes handy for breaking things up.
+Jalankan perintah berikut dalam CMD
 
-{% highlight raw %}
----
-{% endhighlight %}
+```bash
+gem install jekyll bundler
+```
 
----
+akan keluar output:
+![alt text][7]
 
-## Images
+### Membuat web Jekyll
 
-Markdown can also contain images. I'll need to add something here sometime.
+Tujukan CMD (menggunakan `cd`) kamu pada *folder* yang diinginkan, disini saya menggunakan folder `D:\project\code` lalu jalankan
 
-{% highlight raw %}
-![Markdowm Image][/image/url]
-{% endhighlight %}
+```bash
+jekyll new myblog
+```
 
-![Markdowm Image][6]
+![alt text][8]
 
-*Figure Caption*?
+Ubah *directory* CMD
 
-{% highlight raw %}
-![Markdowm Image][/image/url]
-<figcaption class="caption">Photo by John Doe</figcaption>
-{% endhighlight %}
+```bash
+cd myblog
+```
 
-![Markdowm Image][6]
-<figcaption class="caption">Photo by John Doe</figcaption>
+*Build & Serve* dengan perintah
 
-*Bigger Images*?
+```bash
+bundle exec jekyll serve
+```
 
-{% highlight raw %}
-![Markdowm Image][/image/url]{: class="bigger-image" }
-{% endhighlight %}
+![alt text][9]
 
-![Markdowm Image][6]{: class="bigger-image" }
+Buka http://localhost:4000 di browser
+
+![alt text][10]
+
+Sekarang kita berhasil membuat web jekyll di local server. Perlu diketahui setiap kita ingin membuka web kita di local kita wajib menjalankan `bundle exec jekyll serve` pada cmd.
+
+### Hosting jekyll pada github.io
+
+1. Clone repository github.io
+
+    Disini saya menggunakan [GitKraken](https://www.gitkraken.com/)
+
+    ![alt text][11]
+
+2. Pindahkan isi jekyll project (myblog) ke folder github.io
+
+    ![alt text][12]
+
+3. Commit & Push
+
+    ![alt text][13]
+
+4. Buka `<username>.github.io` pada browser kalian
+
+    ![alt text][10]
 
 ---
+Tentunya setelah membuat website ini, kita harus mengkostumisasi karena kita baru saja menginstall template saja. Website jekyll ini nantinya bisa dibuat berbagai macam kegunaan mulai dari blog atau pun menyimpan portofolio kalian. Demikian tutorial kali ini, terimakasih telah membaca dan semoga bermanfaat!
 
-## Code
-
-A HTML Example:
-
-{% highlight html %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Just a test</h1>
-</body>
-</html>
-{% endhighlight %}
-
-A CSS Example:
-
-{% highlight css %}
-pre {
-    padding: 10px;
-    font-size: .8em;
-    white-space: pre;
-}
-
-pre, table {
-    width: 100%;
-}
-
-code, pre, tt {
-    font-family: Monaco, Consolas, Inconsolata, monospace, sans-serif;
-    background: rgba(0,0,0,.05);
-}
-{% endhighlight %}
-
-A JS Example:
-
-{% highlight js %}
-// Sticky Header
-$(window).scroll(function() {
-
-    if ($(window).scrollTop() > 900 && !$("body").hasClass('show-menu')) {
-        $('#hamburguer__open').fadeOut('fast');
-    } else if (!$("body").hasClass('show-menu')) {
-        $('#hamburguer__open').fadeIn('fast');
-    }
-
-});
-{% endhighlight %}
-
-[1]: http://daringfireball.net/projects/markdown/
-[2]: http://www.fileformat.info/info/unicode/char/2163/index.htm
-[3]: http://www.markitdown.net/
-[4]: http://daringfireball.net/projects/markdown/basics
-[5]: http://daringfireball.net/projects/markdown/syntax
-[6]: http://kune.fr/wp-content/uploads/2013/10/ghost-blog.jpg
+[1]: {{ site.url }}/assets/images/post/1/image1.png "Download Ruby+Devkit"
+[2]: {{ site.url }}/assets/images/post/1/image2.png "Cek ruby"
+[3]: {{ site.url }}/assets/images/post/1/image3.png "Cek RubyGems"
+[4]: {{ site.url }}/assets/images/post/1/image4.png "Add Environment Variable"
+[5]: {{ site.url }}/assets/images/post/1/image5.png "Cek Make"
+[6]: {{ site.url }}/assets/images/post/1/image6.png "Cek GCC"
+[7]: {{ site.url }}/assets/images/post/1/image7.png "Install Jekyll Bundler"
+[8]: {{ site.url }}/assets/images/post/1/image8.png "Jekyll new blog"
+[9]: {{ site.url }}/assets/images/post/1/image9.png "serve jekyll"
+[10]: {{ site.url }}/assets/images/post/1/image10.png "website jekyll"
+[11]: {{ site.url }}/assets/images/post/1/image11.png "clone repo github.io"
+[12]: {{ site.url }}/assets/images/post/1/image12.png "move folder jekyll"
+[13]: {{ site.url }}/assets/images/post/1/image13.png "commit and push"
