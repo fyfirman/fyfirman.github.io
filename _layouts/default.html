@@ -22,6 +22,17 @@ layout: compress
     
     {% include favicon.html %}
 
+    {% if page.carousel %}
+    <!-- Google CDN Hosted jQuery  -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <!-- Flexslider Library  -->
+    <script src="/assets/js/jquery.flexslider-min.js"></script>
+    <!-- Initialisation Code  -->
+    <script src="/assets/js/app.js"></script>
+    <!-- Flexslider css -->
+    <link rel="stylesheet" href="/assets/css/flexslider.css">
+    {% endif %}
+
     <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html','' }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}{{ "/feed.xml" }}" />
 
@@ -29,7 +40,6 @@ layout: compress
     {% capture scss_sheet %}{% include style.scss %}{% endcapture %}
     {{ scss_sheet | scssify }}
     </style>
-
 </head>
 <body>
 

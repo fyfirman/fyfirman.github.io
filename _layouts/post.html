@@ -21,6 +21,18 @@ layout: page
     </div>
 {% endif %}
 
+{% if page.carousel %}
+<div class="flexslider">
+  <ul class="slides">
+    {% for slides in page.carousel %}
+    <li>
+      <img src="{{ slides.image }}">
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
 {{content}}
 
 {% if site.post-advance-links contains page.category %}

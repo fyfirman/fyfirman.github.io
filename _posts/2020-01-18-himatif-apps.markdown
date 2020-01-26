@@ -14,6 +14,9 @@ projects: true
 author: fyfirman
 description: Himatif Application
 hidden: false
+carousel:
+  - image: /assets/images/markdown.jpg
+  - image: /assets/images/markdown.jpg
 ---
 
 
@@ -23,7 +26,7 @@ Biasa disebut Himatif Apps. Aplikasi berbasis web menggunakan framework Laravel 
 
 # Teknologi
 
-Teknologi yang digunakan dalam mengerjakan aplikasi ini 
+Teknologi yang digunakan dalam mengerjakan aplikasi ini
 
 * HTML
 * SCSS dengan Framework Materialize
