@@ -8,7 +8,9 @@ tag:
 - web
 - html
 - css
-- front end
+- frontend
+- laravel
+- php
 star: true
 projects: true
 author: fyfirman
@@ -35,4 +37,3 @@ Teknologi yang digunakan dalam mengerjakan aplikasi ini
 * JQuery
 
 ---
-Tentunya setelah membuat website ini, kita harus mengkostumisasi karena kita baru saja menginstall template saja. Website jekyll ini nantinya bisa dibuat berbagai macam kegunaan mulai dari blog atau pun menyimpan portofolio kalian. Demikian tutorial kali ini, terimakasih telah membaca dan semoga bermanfaat!
