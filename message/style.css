@@ -151,3 +151,13 @@ textarea {
         inset -4px -4px 8px rgba(255, 255, 255, 1);
     transition: all, 0.5s;
 }
+
+.no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
