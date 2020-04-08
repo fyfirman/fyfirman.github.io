@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,16 +9,37 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
 </head>
+
 <body>
-    <button class="button neuphormism back-button no-select"><i class="fa fa-arrow-left"></i></button>
-    <div class="container">
+    <a href="http://fyfirman.github.io" class="button neuphormism back-button no-select"><i class="fa fa-home"></i></a>
+    <div id="form" class="container">
         <span class="title">Pesan untuk Mansyah!</span>
-        <form action="">
-            <input type="text" class="sender-input input neuphormism inverse" placeholder="Nama Pengirim (Opsional)">
-            <textarea rows="10" cols="50" class="message-input input neuphormism inverse" placeholder="Pesan"></textarea> 
-            <input type="submit" class="button submit-button highlight-bg neuphormism no-select" value="KIRIM">
-        </form>
+        <div>
+            <input id="sender-input" type="text" class="sender-input input neuphormism inverse" placeholder="Nama Pengirim (Opsional)">
+            <textarea id="message-input" rows="10" cols="50" class="message-input input neuphormism inverse"
+                placeholder="Pesan"></textarea>
+            <input type="submit" class="button submit-button highlight-bg neuphormism no-select" value="KIRIM" onclick="submit()">
+        </div>
     </div>
+    <div id="success" class="container" style="display: none;">
+        <img src="https://dummyimage.com/300x300/000000/fff" alt="" srcset="">
+        <span class="title">Pesan kamu udah kekirim. Makasih ya!</span>
+        <div class="button-wrapper">
+            <button class="button send-more-button highlight-bg neuphormism no-select" onclick="showForm()">Kirim lagi?</button>
+        </div>
+    </div>
+    <div id="failed" class="container" style="display: none;">
+        <img src="https://dummyimage.com/300x300/000000/fff" alt="" srcset="">
+        <span class="title">Waduh! </span>
+        <span class="title">Pesan kamu gak sampe.</span>
+        <span class="title">Coba screenshot & hubungin mansyah ya!</span>
+        <div class="button-wrapper">
+            <button class="button send-more-button highlight-bg neuphormism no-select" onclick="showForm()">Coba lagi?</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
+
 </html>

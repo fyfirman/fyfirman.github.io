@@ -15,9 +15,11 @@ input {
 .container {
     padding: 0 32px;
     margin-top: 8px;
+    text-align: center;
 }
 
 .title {
+    display: block;
     font-weight: 900;
     font-size: 24px;
     line-height: 33px;
@@ -80,6 +82,7 @@ textarea {
 }
 
 .back-button {
+    display: inline-block;
     padding: 16px 20px;
     margin: 16px;
     border-radius: 16px;
@@ -109,6 +112,18 @@ textarea {
     margin-top: 28px;
     padding: 24px;
     border-radius: 48px;
+}
+
+.button-wrapper{
+    display: block;
+    text-align: right;
+}
+
+.send-more-button{
+    margin-top: 8px;
+    display: inline-block;
+    padding: 16px;
+    border-radius: 32px;
 }
 
 .highlight-bg {
